@@ -1,0 +1,10 @@
+{
+  "name": "niba-space-invaders",
+  "version": "0.1.0",
+  "description": "Multi-formation Space Invaders tools for MakeCode Arcade",
+  "license": "MIT",
+  "dependencies": { "device": "*" },
+  "files": ["settings.ts", "formation.ts", "movement.ts", "README.md"],
+  "supportedTargets": ["arcade"],
+  "preferredEditor": "tsprj"
+}
