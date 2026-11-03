@@ -1,4 +1,10 @@
-//% color="#247FA1" icon="\uf0ec" block="Movement Manager"
+/**
+ * Movement Manager
+ */
+//% color="#287B9A"
+//% weight=90
+//% icon="\uf0b2"
+//% block="Movement Manager"
 namespace spaceInvaders {
     let trackedIds: number[] = []
     let speeds: number[] = []
