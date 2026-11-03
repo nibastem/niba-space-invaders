@@ -21,12 +21,12 @@ namespace spaceInvaders {
         })
     }
 
-    /** Start or restart movement for a formation; other formations are unaffected. */
-    //% blockId=niba_start_formation_movement
-    //% block="start formation $id moving speed $speed drop $dropDistance"
-    //% speed.defl=30 speed.min=0
-    //% dropDistance.defl=8 dropDistance.min=0
-    //% weight=100
+//% blockId="niba_start_formation_movement"
+//% block="start formation $id moving at speed $speed drop $dropDistance"
+//% id.defl=1
+//% speed.defl=30
+//% dropDistance.defl=8
+//% weight=100
     export function startMovement(id: number, speed: number, dropDistance: number): void {
         if (!formationManager.exists(id)) return
         let members = formationManager.getEnemies(id)
@@ -56,9 +56,10 @@ namespace spaceInvaders {
         registerUpdate()
     }
 
-    /** Stop one formation; does not stop other formations. */
-    //% blockId=niba_stop_formation_movement block="stop formation $id movement"
-    //% weight=90
+//% blockId="niba_stop_formation_movement"
+//% block="stop movement for formation $id"
+//% id.defl=1
+//% weight=90
     export function stopMovement(id: number): void {
         let idx = indexOfFormation(id)
         if (idx < 0) return
@@ -68,10 +69,11 @@ namespace spaceInvaders {
         }
     }
 
-    /** Change speed without changing direction or restarting the formation. */
-    //% blockId=niba_set_formation_speed block="set formation $id speed to $speed"
-    //% speed.defl=40 speed.min=0
-    //% weight=80
+//% blockId="niba_set_formation_speed"
+//% block="set movement speed for formation $id to $speed"
+//% id.defl=1
+//% speed.defl=40
+//% weight=80
     export function setSpeed(id: number, speed: number): void {
         let idx = indexOfFormation(id)
         if (idx < 0) return
@@ -103,9 +105,10 @@ namespace spaceInvaders {
         bottomLimits[idx] = y
     }
 
-    /** Remains true after reaching the bottom, until movement is restarted. */
-    //% blockId=niba_formation_bottom_reached block="formation $id reached bottom?"
-    //% weight=50
+//% blockId="niba_formation_bottom_reached"
+//% block="has formation $id reached bottom?"
+//% id.defl=1
+//% weight=50
     export function hasReachedBottom(id: number): boolean {
         let idx = indexOfFormation(id)
         return idx >= 0 && bottomFlags[idx]
